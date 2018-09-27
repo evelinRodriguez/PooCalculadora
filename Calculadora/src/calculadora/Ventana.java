@@ -3,7 +3,7 @@ package calculadora;
 
 public class Ventana extends javax.swing.JFrame {
      Calculadora calcu= new Calculadora();
-     CalculadoraT Calcu= new CalculadoraT();
+     CalculadoraT Calcu1= new CalculadoraT();
     public Ventana() {
         initComponents();
     }
@@ -33,6 +33,11 @@ public class Ventana extends javax.swing.JFrame {
         division = new javax.swing.JButton();
         c = new javax.swing.JButton();
         seno = new javax.swing.JButton();
+        cos = new javax.swing.JButton();
+        tan = new javax.swing.JButton();
+        cotan = new javax.swing.JButton();
+        sec = new javax.swing.JButton();
+        csc = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -188,10 +193,45 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
-        seno.setText("jButton1");
+        seno.setText("seno");
         seno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 senoActionPerformed(evt);
+            }
+        });
+
+        cos.setText("cos");
+        cos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cosActionPerformed(evt);
+            }
+        });
+
+        tan.setText("tan");
+        tan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tanActionPerformed(evt);
+            }
+        });
+
+        cotan.setText("cotan");
+        cotan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cotanActionPerformed(evt);
+            }
+        });
+
+        sec.setText("sec");
+        sec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                secActionPerformed(evt);
+            }
+        });
+
+        csc.setText("csc");
+        csc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cscActionPerformed(evt);
             }
         });
 
@@ -199,7 +239,16 @@ public class Ventana extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(386, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(csc)
+                    .addComponent(sec)
+                    .addComponent(cotan)
+                    .addComponent(cos)
+                    .addComponent(seno)
+                    .addComponent(tan))
+                .addGap(18, 18, 18))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -216,9 +265,7 @@ public class Ventana extends javax.swing.JFrame {
                             .addGap(30, 30, 30)
                             .addComponent(Suma, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(10, 10, 10)
-                            .addComponent(resta, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(30, 30, 30)
-                            .addComponent(seno))
+                            .addComponent(resta, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(B4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -247,11 +294,24 @@ public class Ventana extends javax.swing.JFrame {
                                         .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGap(140, 140, 140)
                             .addComponent(c, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 92, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(100, Short.MAX_VALUE)
+                .addComponent(cos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(seno)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tan)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cotan)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sec)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(csc)
+                .addGap(32, 32, 32))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -262,10 +322,7 @@ public class Ventana extends javax.swing.JFrame {
                         .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(B3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Suma, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(resta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(seno)))
+                        .addComponent(resta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(10, 10, 10)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -379,10 +436,34 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_cActionPerformed
 
     private void senoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senoActionPerformed
-        jTextField1.setText("el seno de :");
-        Calcu.seno(jTextField1.getText());
-        jTextField1.setText("");
+       Calcu1.seno(jTextField1.getText());
+       jTextField1.setText("");//limpia el contenido que este en la caja de texto
     }//GEN-LAST:event_senoActionPerformed
+
+    private void cosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cosActionPerformed
+       Calcu1.cos(jTextField1.getText());
+       jTextField1.setText("");//limpia el contenido que este en la caja de texto
+    }//GEN-LAST:event_cosActionPerformed
+
+    private void tanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tanActionPerformed
+        Calcu1.tan(jTextField1.getText());
+       jTextField1.setText("");//limpia el contenido que este en la caja de texto
+    }//GEN-LAST:event_tanActionPerformed
+
+    private void cotanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cotanActionPerformed
+        Calcu1.cotan(jTextField1.getText());
+       jTextField1.setText("");//limpia el contenido que este en la caja de texto
+    }//GEN-LAST:event_cotanActionPerformed
+
+    private void secActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_secActionPerformed
+        Calcu1.sec(jTextField1.getText());
+       jTextField1.setText("");//limpia el contenido que este en la caja de texto
+    }//GEN-LAST:event_secActionPerformed
+
+    private void cscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cscActionPerformed
+        Calcu1.csc(jTextField1.getText());
+       jTextField1.setText("");//limpia el contenido que este en la caja de texto
+    }//GEN-LAST:event_cscActionPerformed
 
     /**
      * @param args the command line arguments
@@ -433,12 +514,17 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton Igual;
     private javax.swing.JButton Suma;
     private javax.swing.JButton c;
+    private javax.swing.JButton cos;
+    private javax.swing.JButton cotan;
+    private javax.swing.JButton csc;
     private javax.swing.JButton division;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton multiplicacion;
     private javax.swing.JButton resta;
+    private javax.swing.JButton sec;
     private javax.swing.JButton seno;
+    private javax.swing.JButton tan;
     // End of variables declaration//GEN-END:variables
 }
